@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p10_js_effects</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+
+        }
+        #caixa1{
+            border: 2px solid white;
+            z-index: 10;
+            margin: auto;
+            display: flex;
+            position: relative;
+            background-color: rgb(12, 113, 91);
+            color: rgb(255, 229, 80);
+            width: 50%;
+            height: 50vh;
+
+        }
+      
+        #fx{
+            padding: 25px;
+            position: absolute;
+            right: 0;
+        }
+        
+        ul{
+            position: absolute;
+            margin: 40px;
+        }
+
+        ul li{
+            display: inline;
+            list-style-type: none;
+            padding: 20px;
+            background-color: rgb(12, 113, 91);
+            color: rgb(255, 229, 80);
+        }
+        ul li:hover{
+            box-shadow: 10px 10px rgb(255, 89, 0);
+        }
+        ul li:hover, #caixa1:hover{
+            box-shadow: 10px 10px rgb(255, 89, 0);
+        }
+
+        #fadeOut:hover, #fx:hover{
+            color: rgb(255, 89, 0);
+            background-color: rgba(40, 40, 138, 0.57);
+        }
+        h2{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#fadeOut, #fx").click(function(){
+                $("#caixa1").fadeOut();
+            });
+            $("#fadeIn").click(function(){
+                $("#caixa1").fadeIn();
+            });
+            $("#ft").click(function(){
+                $("#caixa1").fadeToggle();
+            })
+        });
+    </script>
+</head>
+<body>
+        <div class="container">
+        <ul>
+            <li id="fadeIn">Fade In</li>
+            <li id="fadeOut">Fade Out</li>
+            <li id="ft">Fade Toggle</li>
+        </ul>
+        
+        <!-- <button id="fadeIn">Fade In</button> -->
+        <div id="caixa1">
+            <p id="fx">x</p>
+            <h2>Hola</h2>
+        </div>
+</body>
+</html>
